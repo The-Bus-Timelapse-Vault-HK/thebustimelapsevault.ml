@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+    <title>香港巴士縮時庫</title>
+</head>
+<body>
+    <h1>歡迎來到香港巴士縮時庫！</h1>
+    <h2>本庫的目的是給予香港的巴士縮時行車片段一個容易使用的搜尋平台，以作記錄香港巴士路線的走線以及交通情況，行車時間之用。</h2>
+    <h3>香港巴士路線數量眾多，恕未能盡錄所有路線。如發現欠漏，請電郵 <a href=mailto:thebustimelapsevault@gmail.com>thebustimelapsevault@gmail.com</a> 與管理員內洽。謝謝！</h3>
+    <style>
+        #myInput {
+        background-image: url('https://www.w3schools.com/css/searchicon.png'); /* Add a search icon to input */
+        background-position: 10px 12px; /* Position the search icon */
+        background-repeat: no-repeat; /* Do not repeat the icon image */
+        width: 100%; /* Full-width */
+        font-size: 16px; /* Increase font-size */
+        padding: 12px 20px 12px 40px; /* Add some padding */
+        border: 1px solid #ddd; /* Add a grey border */
+        margin-bottom: 12px; /* Add some space below the input */
+        }
+
+        #myUL {
+        /* Remove default list styling */
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        }
+
+        #myUL li a {
+        border: 1px solid #ddd; /* Add a border to all links */
+        margin-top: -1px; /* Prevent double borders */
+        background-color: #f6f6f6; /* Grey background color */
+        padding: 12px; /* Add some padding */
+        text-decoration: none; /* Remove default text underline */
+        font-size: 18px; /* Increase the font-size */
+        color: black; /* Add a black text color */
+        display: block; /* Make it into a block element to fill the whole list */
+        }
+
+        #myUL li a:hover:not(.header) {
+        background-color: #eee; /* Add a hover effect to all links, except for headers */
+        }
+    </style>
+    <script>
+        function myFunction() {
+          // Declare variables
+          var input, filter, ul, li, a, i, txtValue;
+          input = document.getElementById('myInput');
+          filter = input.value.toUpperCase();
+          ul = document.getElementById("myUL");
+          li = ul.getElementsByTagName('li');
+        
+          // Loop through all list items, and hide those who don't match the search query
+          for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+            } else {
+              li[i].style.display = "none";
+            }
+          }
+        }
+    </script>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="尋找巴士路線">
+    <ul id="myUL">
+        <li><a href="#">1</a></li>
+        <li><a href="#">1P</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">2A</a></li>
+        <li><a href="#">2X</a></li>
+        <li><a href="#">3A</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">4X</a></li>
+        <li><a href="#">5B</a></li>
+        <li><a href="#">5X</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">6A</a></li>
+        <li><a href="#">6X</a></li>
+        <li><a href="#">7</a></li>
+        <li><a href="#">8</a></li>
+        <li><a href="#">8H</a></li>
+        <li><a href="#">8P</a></li>
+        <li><a href="#">8S</a></li>
+        <li><a href="#">8X</a></li>
+        <li><a href="#">9</a></li>
+        <li><a href="#">10</a></li>
+        <li><a href="#">11</a></li>
+        <li><a href="#">12</a></li>
+        <li><a href="#">12A</a></li>
+        <li><a href="#">12M</a></li>
+        <li><a href="#">13</a></li>
+        <li><a href="#">14</a></li>
+        <li><a href="#">15</a></li>
+        <li><a href="#">15B</a></li>
+        <li><a href="#">15C</a></li>
+        <li><a href="#">18</a></li>
+        <li><a href="#">18P</a></li>
+        <li><a href="#">18X</a></li>
+        <li><a href="#">19</a></li>
+        <li><a href="#">19P</a></li>
+        <li><a href="#">23</a></li>
+        <li><a href="#">23B</a></li>
+        <li><a href="#">25</a></li>
+        <li><a href="#">25A</a></li>
+        <li><a href="#">26</a></li>
+    </ul>
+</body>
